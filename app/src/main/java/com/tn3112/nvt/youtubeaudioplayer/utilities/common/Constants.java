@@ -7,7 +7,7 @@ package com.tn3112.nvt.youtubeaudioplayer.utilities.common;
 public class Constants {
 
     //TODO: Put Youtube Data API v3 key here
-    public final static String YOUTUBE_API_KEY = "AIzaSyCW4EEqlvmcfIlI0QrY9a7fqmiXb7N3woA";
+    public final static String YOUTUBE_API_KEY = "";
 
     public static final String APP_NAME = "Youtube audio player";
     public static final String ENCODING_UTF_8 = "UTF-8";
