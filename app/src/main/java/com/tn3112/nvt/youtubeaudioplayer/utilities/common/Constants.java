@@ -7,7 +7,7 @@ package com.tn3112.nvt.youtubeaudioplayer.utilities.common;
 public class Constants {
 
     //TODO: Put Youtube Data API v3 key here
-    public final static String YOUTUBE_API_KEY = "";
+    public final static String YOUTUBE_API_KEY = "AIzaSyAsVSGGR_6ufRfG6y5CDJE45My_3KCO_Go";
 
     public static final String APP_NAME = "Youtube audio player";
     public static final String ENCODING_UTF_8 = "UTF-8";
@@ -58,9 +58,9 @@ public class Constants {
     public final static String RECOMMENDATIONS_MOST_VIEWED = "MOST VIEWED";
     public final static String RECOMMENDATIONS_MOST_POPULAR_IN_REGION = "POPULAR IN YOUR REGION";
     public final static String RECOMMENDATIONS_RECENT = "RECENT";
-    public final static String PLAYLIST_TOP_TRACKS_CHANNEL_ID = "PLFgquLnL59alcyTM2lkWJU34KtfPXQDaX";
+    public final static String PLAYLIST_TOP_TRACKS_CHANNEL_ID = "PLUigibSh9b-Y-gNiZv1Uge-9H390pWOqV";
     public final static String PLAYLIST_NEW_MUSIC_THIS_WEEK_CHANNEL_ID = "PLFgquLnL59alW3xmYiWRaoz0oM3H17Lth";
-    public final static String PLAYLIST_MOST_VIEWED_CHANNEL_ID = "PL8A83124F1D79BD4F";
+    public final static String PLAYLIST_MOST_VIEWED_CHANNEL_ID = "PLUigibSh9b-aB9R1w-OXu7Cim5lvIG6s8";
 
     public final static int DEFAULT_PLAYLIST_ID = -1;
     public final static String APP_PREFERENCES = "app_preferences";

@@ -1,0 +1,86 @@
+<!--
+  Copyright (C) 2016 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    <string name="app_name">Youtube music play</string>
+    <string name="error">Lỗi</string>
+    <string name="empty_search_query_error_message">Vui lòng nhập truy vấn tìm kiếm của bạn và thử lại</string>
+    <string name="try_again_message">Thủ lại</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="no_connection_error_message_title">Lỗi mạng</string>
+    <string name="network_error_message">Xảy ra lỗi, vui lòng kiểm tra kết nối internet của bạn hoặc thử lại sau</string>
+    <string name="generic_error_message">Xảy ra lỗi không xác định, thử lại sau</string>
+    <string name="menu_action_search">Tìm kiếm...</string>
+    <string name="menu_action_clear_db"> Xóa dữ liệu</string>
+    <string name="menu_action_playlists">Playlists</string>
+    <string name="menu_action_add_to_playlist">Thêm vào Playlist</string>i
+    <string name="menu_action_remove_from_playlist">Xóa khỏi Playlist</string>
+    <string name="menu_action_close_app">Thoát</string>
+    <string name="error_no_stream_for_video">Không có luồng âm thanh cho video này, nó có thể bị xóa hoặc thêm quá gần đây. Thử lại sau vài phút hoặc chọn một video khác</string>
+    <string name="error_playlist_name_empty">Tên Playlists phát không được để trống</string>
+    <string name="error_playlist_name_not_unique">Tên Playlist đã tồn tại</string>
+    <string name="menu_action_settings">Cài đặt</string>
+    <string name="title_activity_settings">Cà đặt</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_title_load_recommendations">Không tải video được đề xuất</string>
+    <string name="pref_description_load_recommendations">Tăng tốc độ khởi động ứng dụng và tiết kiệm lưu lượng</string>
+    <string name="key_pref_no_recommendations">pref_no_recommendations</string>
+
+    <string name="pref_title_cache_size">Kích cỡ Cache</string>
+    <string name="pref_description_cache_size">Bộ nhớ cache được sử dụng để lưu trữ các bài hát đã phát trước đó</string>
+    <string name="pref_default_cache_size">250</string>
+    <string name="key_pref_cache_size">pref_cache_size</string>
+    <string-array name="pref_list_titles_cache_size">
+        <item>No cache</item>
+        <item>100 MB</item>
+        <item>250 MB</item>
+        <item>500 MB</item>
+        <item>750 MB</item>
+        <item>1 GB</item>
+    </string-array>
+    <string-array name="pref_list_values_cache_size">
+        <item>0</item>
+        <item>100</item>
+        <item>250</item>
+        <item>500</item>
+        <item>750</item>
+        <item>1000</item>
+    </string-array>
+
+    <string name="pref_title_save_in_cache_only_wifi">Chỉ cho phép lưu trữ các bài hát khi được kết nối với WiFi</string>
+    <string name="pref_description_save_in_cache_only_wifi">Sẽ tiêu thụ nhiều dữ liệu di động hơn nếu tắt</string>
+    <string name="key_pref_save_in_cache_only_wifi">pref_mobile_network_caching</string>
+
+    <string name="pref_title_audio_quality">Chất lượng âm thanh</string>
+    <string name="pref_description_audio_quality">Chất lượng tốt hơn tiêu thụ dữ  tliệuruy cập nhiều hơn. Tự động được khuyến nghị (nó sẽ chọn chất lượng dựa trên loại kết nối của bạn)</string>
+    <string name="pref_default_audio_quality">0</string>
+    <string name="key_pref_audio_quality">pref_audio_quality</string>
+    <string-array name="pref_list_titles_audio_quality">
+        <item>Tự động</item>
+        <item>Tốt nhất</item>
+        <item>Trung bình</item>
+        <item>Thấp nhất</item>
+    </string-array>
+    <string-array name="pref_list_values_audio_quality">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
