@@ -47,14 +47,6 @@ public class SearchSuggestionsNetwork {
         } else return instance;
     }
 
-    /**
-     * Method gets the suggestion for the query provided
-     *
-     * @param output format of the output, for json should be 'firefox'
-     * @param ds     restricts the search to the particular site (for youtube it's 'yt')
-     * @param query  search query
-     * @return
-     */
     public Observable<SearchSuggestionsResponse> getSuggestionsRx(String output, String ds, String query) {
         return suggestionsApi.getSuggestionsRx(output, ds, query);
     }

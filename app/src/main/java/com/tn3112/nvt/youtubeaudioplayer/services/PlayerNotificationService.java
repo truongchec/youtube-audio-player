@@ -108,7 +108,7 @@ public class PlayerNotificationService extends Service {
             registerReceivers();
 
             Notification notification = builder.build();
-            // To make notification stay when user clears all notifications
+
             notification.flags = notification.flags | Notification.FLAG_NO_CLEAR;
             startForeground(notificationId, notification);
         } else {

@@ -71,7 +71,7 @@ public class MainActivityPresenterImpl implements MainActivityContract.Presenter
 
     @Override
     public <T extends UserFriendly> void handleException(T exception) {
-        // Hide spinner if it visible
+
         view.get().showLoadingIndicator(false);
         if (exception.getThrowable() != null) {
             exception.getThrowable().printStackTrace();
@@ -84,7 +84,7 @@ public class MainActivityPresenterImpl implements MainActivityContract.Presenter
     @Override
     public void handleException(Exception exception) {
         exception.printStackTrace();
-        // Hide spinner if it visible
+
         view.get().showLoadingIndicator(false);
         DialogInterface.OnClickListener listener = (dialog, which) -> dialog.dismiss();
         utils.createAlertDialog(R.string.error, R.string.generic_error_message,
@@ -99,15 +99,12 @@ public class MainActivityPresenterImpl implements MainActivityContract.Presenter
     @Override
     public void prepareAudioStreamAndPlay(YoutubeSongDto songData) {
         String url = songData.getStreamUrl();
-        // Check if song is cached
         Set<String> cacheKeys = simpleCache.getKeys();
-        // Song may be cached partially if caching task was interrupted,
-        // due to some error or if user closed the app before song was fully cached
+
         if (songData.getStreamUrl() != null && cacheKeys.contains(url)) {
             if (audioStreamsUtils.isSongFullyCached(songData)) {
                 playPreparedStream(songData);
             }
-            // Song may be still caching but if not we deleting the unfinished cache
             else if (!cachingTasksManager.hasTask(songData.getVideoId())) {
                 CacheUtil.remove(simpleCache, url);
                 checkInternetAndStartExtractionTask(songData);
@@ -140,7 +137,7 @@ public class MainActivityPresenterImpl implements MainActivityContract.Presenter
         bundle.putInt(EXTRA_PLAYER_STATE_CODE, PlayerAction.START);
         bundle.putParcelable(Constants.EXTRA_SONG, songData);
         utils.sendLocalBroadcastMessage(ACTION_PLAYER_CHANGE_STATE, bundle);
-        // Preparing player UI
+
         view.get().initPlayerSlider(songData);
     }
 

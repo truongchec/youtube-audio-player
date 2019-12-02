@@ -1,13 +1,12 @@
 package com.tn3112.nvt.youtubeaudioplayer.utilities.common;
 
-/**
- * Created by ahaman on 3/28/18.
- */
+
 
 public class Constants {
 
-    //TODO: Put Youtube Data API v3 key here
-    public final static String YOUTUBE_API_KEY = "";
+    //truy cập link dưới để lấy api key
+    //https://console.developers.google.com/apis/library/youtube.googleapis.com
+    public final static String YOUTUBE_API_KEY = "AIzaSyAP4Mf-O4uKy321p89f7vsrTxH7fwmSLtY";
 
     public static final String APP_NAME = "Youtube audio player";
     public static final String ENCODING_UTF_8 = "UTF-8";
@@ -16,22 +15,15 @@ public class Constants {
     public static final String STREAM_URI = "STREAM_URI";
     public static final int PLAYBACK_PROGRESS_CHANGED = 5;
     public static final int PLAYER_ERROR = 6;
-
-    public static final String PLAYER_ERROR_MESSAGE = "PLAYER_ERROR_MESSAGE";
     public static final String PLAYER_ERROR_THROWABLE = "PLAYER_ERROR_THROWABLE2";
-
     public static final String EXTRA_TRACK_DURATION = "EXTRA_TRACK_DURATION";
     public static final String EXTRA_PLAYER_STATE_CODE = "EXTRA_PLAYER_STATE_CODE";
-
     public static final String ACTION_PLAYER_CHANGE_STATE = "ACTION_PLAYER_CHANGE_STATE";
-
     public static final String ACTION_PLAYLIST_NAVIGATION = "ACTION_PLAYLIST_NAVIGATION";
     public static final String ACTION_PLAYER_STATE_CHANGED = "ACTION_PLAYER_STATE_CHANGED";
-
     public static final String EXTRA_SONG = "EXTRA_SONG";
     public static final String EXTRA_PLAYBACK_STATUS = "EXTRA_PLAYBACK_STATUS";
     public static final String EXTRA_TRACK_PROGRESS = "EXTRA_TRACK_PROGRESS";
-
     public final static String YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/";
     public final static String GOOGLE_SEARCH_SUGGESTIONS = "https://suggestqueries.google.com/";
     public final static String QUERY_PART_SNIPPET = "snippet";
@@ -39,24 +31,19 @@ public class Constants {
     public final static String QUERY_PART_STATISTICS = "statistics";
     public final static int QUERY_SEARCH_MAX_RESULTS = 25;
     public final static String QUERY_PLAYLIST_MAX_RESULTS = "10";
-    public final static String QUERY_ORDER_VIEW_COUNT = "viewCount";
     public final static String QUERY_ORDER_RELEVANCE = "relevance";
     public final static String QUERY_TYPE_VIDEO = "video";
-    public final static String QUERY_CHART_MOST_POPULAR = "mostPopular";
-    public final static String QUERY_VIDEO_CATEGORY_MUSIC = "10";
+    public final static String MOST_POPULAR = "mostPopular";
     public final static String QUERY_SUGGESTIONS_OUTPUT = "firefox";
     public final static String QUERY_SUGGESTIONS_DS = "yt";
 
     public final static String BUNDLE_PLAYLISTS = "playlists";
     public final static String BUNDLE_NEW_SONG_FOR_PLAYLIST = "video_data";
-    public final static String BUNDLE_SEARCH_RESULTS = "search_results";
-    public final static String BUNDLE_RECOMMENDATIONS = "bundle_recommendations";
-    public final static String BUNDLE_RECOMMENDATIONS_FAILED = "bundle_recommendations_failed";
 
     public final static String RECOMMENDATIONS_TOP_TRACKS = "TOP TRACKS";
     public final static String RECOMMENDATIONS_NEW_MUSIC_THIS_WEEK = "NEW MUSIC THIS WEEK";
     public final static String RECOMMENDATIONS_MOST_VIEWED = "MOST VIEWED";
-    public final static String RECOMMENDATIONS_MOST_POPULAR_IN_REGION = "POPULAR IN YOUR REGION";
+    public final static String MOST_POPULAR_IN_REGION = "POPULAR IN YOUR REGION";
     public final static String RECOMMENDATIONS_RECENT = "RECENT";
     public final static String PLAYLIST_TOP_TRACKS_CHANNEL_ID = "PLUigibSh9b-Y-gNiZv1Uge-9H390pWOqV";
     public final static String PLAYLIST_NEW_MUSIC_THIS_WEEK_CHANNEL_ID = "PLFgquLnL59alW3xmYiWRaoz0oM3H17Lth";

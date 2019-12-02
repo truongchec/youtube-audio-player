@@ -30,7 +30,7 @@ public class SplashActivityPresenterImpl implements SplashActivityContract.Prese
                 R.string.button_ok, listener, 0, null);
     }
 
-    //TODO: Implement it
+
     @Override
     public void handleException(Exception exception) {
 

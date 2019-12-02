@@ -14,7 +14,7 @@
   limitations under the License.
 -->
 <resources>
-    <string name="app_name">Youtube audio player</string>
+    <string name="app_name">Youtube music play</string>
     <string name="error">Error</string>
     <string name="empty_search_query_error_message">Please, type your search query and try again</string>
     <string name="try_again_message">Try again</string>

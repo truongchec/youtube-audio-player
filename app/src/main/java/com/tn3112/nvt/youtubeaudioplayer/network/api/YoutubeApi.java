@@ -13,39 +13,59 @@ public interface YoutubeApi {
 
 
     @GET("videos")
-    Call<YoutubeVideoListResponse> getVideoInfo(@Query("key") String key, @Query("part") String part, @Query("id") String videoId);
+    Call<YoutubeVideoListResponse> getVideoInfo(@Query("key") String key,
+                                                @Query("part") String part,
+                                                @Query("id") String videoId);
 
     @GET("videos")
-    Observable<YoutubeVideoListResponse> getVideoInfoRx(@Query("key") String key, @Query("part") String part,
-                                                        @Query("id") String videoId, @Query("maxResults") String maxResults);
+    Observable<YoutubeVideoListResponse> getVideoInfoRx(@Query("key") String key,
+                                                        @Query("part") String part,
+                                                        @Query("id") String videoId,
+                                                        @Query("maxResults") String maxResults);
 
     @GET("videos")
-    Call<YoutubeApiSearchResponse> getVideoInfo(@Query("key") String key, @Query("part") String part,
-                                                @Query("chart") String chart, @Query("videoCategoryId") String videoCategoryId,
+    Call<YoutubeApiSearchResponse> getVideoInfo(@Query("key") String key,
+                                                @Query("part") String part,
+                                                @Query("chart") String chart,
+                                                @Query("videoCategoryId") String videoCategoryId,
                                                 @Query("maxResults") int maxResults);
 
     @GET("videos")
-    Call<YoutubeApiSearchResponse> getVideoInfo(@Query("key") String key, @Query("part") String part,
-                                                @Query("chart") String chart, @Query("videoCategoryId") String videoCategoryId,
-                                                @Query("regionCode") String countryCode, @Query("maxResults") int maxResults);
+    Call<YoutubeApiSearchResponse> getVideoInfo(@Query("key") String key,
+                                                @Query("part") String part,
+                                                @Query("chart") String chart,
+                                                @Query("videoCategoryId") String videoCategoryId,
+                                                @Query("regionCode") String countryCode,
+                                                @Query("maxResults") int maxResults);
 
     @GET("search")
-    Call<YoutubeApiSearchResponse> getSearchResults(@Query("key") String apiKey, @Query("part") String part,
-                                                    @Query("q") String query, @Query("maxResults") int maxResults,
-                                                    @Query("type") String type, @Query("order") String order,
+    Call<YoutubeApiSearchResponse> getSearchResults(@Query("key") String apiKey,
+                                                    @Query("part") String part,
+                                                    @Query("q") String query,
+                                                    @Query("maxResults") int maxResults,
+                                                    @Query("type") String type,
+                                                    @Query("order") String order,
                                                     @Query("pageToken") String pageToken);
 
     @GET("search")
-    Call<YoutubeApiSearchResponse> getSearchResults(@Query("key") String apiKey, @Query("part") String part,
-                                                    @Query("q") String query, @Query("maxResults") int maxResults,
-                                                    @Query("type") String type, @Query("order") String order);
+    Call<YoutubeApiSearchResponse> getSearchResults(@Query("key") String apiKey,
+                                                    @Query("part") String part,
+                                                    @Query("q") String query,
+                                                    @Query("maxResults") int maxResults,
+                                                    @Query("type") String type,
+                                                    @Query("order") String order);
 
     @GET("search")
-    Observable<YoutubeApiSearchResponse> getSearchResultsRx(@Query("key") String apiKey, @Query("part") String part,
-                                                            @Query("q") String query, @Query("maxResults") int maxResults,
-                                                            @Query("type") String type, @Query("order") String order);
+    Observable<YoutubeApiSearchResponse> getSearchResultsRx(@Query("key") String apiKey,
+                                                            @Query("part") String part,
+                                                            @Query("q") String query,
+                                                            @Query("maxResults") int maxResults,
+                                                            @Query("type") String type,
+                                                            @Query("order") String order);
 
     @GET("playlistItems")
-    Maybe<YoutubeVideoListResponse> getPlaylistRx(@Query("key") String apiKey, @Query("part") String part,
-                                                  @Query("playlistId") String playlistId, @Query("maxResults") String maxResults);
+    Maybe<YoutubeVideoListResponse> getPlaylistRx(@Query("key") String apiKey,
+                                                  @Query("part") String part,
+                                                  @Query("playlistId") String playlistId,
+                                                  @Query("maxResults") String maxResults);
 }

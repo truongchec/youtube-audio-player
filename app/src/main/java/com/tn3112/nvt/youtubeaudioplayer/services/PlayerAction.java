@@ -1,6 +1,6 @@
 package com.tn3112.nvt.youtubeaudioplayer.services;
 
-//TODO: Move to Constants as separate interface
+
 public class PlayerAction {
 
     public static final int START = 1;

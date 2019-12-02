@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 // Copypasted from https://gist.github.com/nesquena/d09dc68ff07e845cc622
 public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnScrollListener {
-    // The minimum amount of items to have below your current scroll position
-    // before loading more.
+
     private int visibleThreshold = 30;
-    // The total number of items in the dataset after the last load
+    //Tổng số mục trong tập dữ liệu sau lần tải cuối cùng
     private int previousTotalItemCount = 0;
-    // True if we are still waiting for the last set of data to load.
+    // Đúng nếu chúng ta vẫn đang chờ bộ dữ liệu cuối cùng tải.
     private boolean loading = true;
 
     private RecyclerView.LayoutManager mLayoutManager;
@@ -43,9 +42,7 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
         return maxSize;
     }
 
-    // This happens many times a second during a scroll, so be wary of the code you place here.
-    // We are given a few useful parameters to help us work out if we need to load some more data,
-    // but first we check if we are waiting for the previous load to finish.
+
     @Override
     public void onScrolled(RecyclerView view, int dx, int dy) {
         int lastVisibleItemPosition = 0;
@@ -61,38 +58,34 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
             lastVisibleItemPosition = ((LinearLayoutManager) mLayoutManager).findLastVisibleItemPosition();
         }
 
-        // If the total item count is zero and the previous isn't, assume the
-        // list is invalidated and should be reset back to initial state
+
         if (totalItemCount < previousTotalItemCount) {
             this.previousTotalItemCount = totalItemCount;
             if (totalItemCount == 0) {
                 this.loading = true;
             }
         }
-        // If it’s still loading, we check to see if the dataset count has
-        // changed, if so we conclude it has finished loading and update the current page
-        // number and total item count.
+
         if (loading && (totalItemCount > previousTotalItemCount)) {
             loading = false;
             previousTotalItemCount = totalItemCount;
         }
 
-        // If it isn’t currently loading, we check to see if we have breached
-        // the visibleThreshold and need to reload more data.
-        // If we do need to reload some more data, we execute onLoadMore to fetch the data.
-        // threshold should reflect how many total columns there are too
+        // Nếu nó hiện đang tải, chúng tôi kiểm tra xem chúng tôi có vi phạm không
+ // các visibleThreshold và cần phải tải lại dữ liệu hơn.
+ // Nếu chúng tôi cần tải lại một số dữ liệu, chúng tôi sẽ thực thi onLoadMore để lấy dữ liệu.
+ // ngưỡng sẽ phản ánh tổng số cột có quá nhiều
         if (!loading && (lastVisibleItemPosition + visibleThreshold) > totalItemCount) {
             onLoadMore(totalItemCount, view);
             loading = true;
         }
     }
 
-    // Call this method whenever performing new searches
+
     public void resetState() {
         this.previousTotalItemCount = 0;
         this.loading = true;
     }
 
-    // Defines the process for actually loading more data based on page
     public abstract void onLoadMore(int totalItemsCount, RecyclerView view);
 }

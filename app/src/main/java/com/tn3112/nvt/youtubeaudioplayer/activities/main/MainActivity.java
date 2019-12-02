@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
             @Override
             public boolean onSuggestionClick(int position) {
-                // Assigning value to a temp field in order avoid new suggestion fetch
+
                 pendingSearchQuery = suggestions.get(position);
                 searchView.setQuery(pendingSearchQuery, true);
                 return true;
@@ -231,9 +231,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (query.length() > 0) {
-                    // Clearing pending search query as it will be executed
+
                     pendingSearchQuery = null;
-                    // Do this trick to hide suggestions list
+
                     ((AutoCompleteTextView) searchView.findViewById(R.id.search_src_text)).dismissDropDown();
                     return presenter.makeYoutubeSearch(searchView.getQuery().toString());
                 }
@@ -243,16 +243,16 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
             @SuppressLint("CheckResult")
             @Override
             public boolean onQueryTextChange(String query) {
-                // Checking if query long enough
+
                 if (query.length() > 3 && !query.equals(pendingSearchQuery)) {
                     presenter.getSearchSuggestions(query)
                             .subscribeOn(Schedulers.newThread())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(suggestionsResponse -> {
                                         List<String> tempList = Arrays.asList(suggestionsResponse.getSuggestions());
-                                        // Limiting the suggestions to only 5
+
                                         tempList = tempList.subList(0, 4);
-                                        // Clearing the old suggestions before adding the new ones
+
                                         suggestions.clear();
                                         suggestions.addAll(tempList);
                                         String[] columns = {BaseColumns._ID,
@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
                 ft.replace(R.id.fragment_placeholder, fragment, fragment.getClass().getSimpleName());
                 ft.addToBackStack(null);
                 ft.commit();
-                //TODO: think about it
+
                 minimizePlayer();
                 return true;
             case R.id.action_clear_db:
@@ -505,7 +505,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         setupRepeatButtons();
         setupShuffleButtons();
 
-        // Observing changes in db such as songs added to or removed from playlist and if so updating the playback queue in player
         PlaylistsWithSongsViewModel.getInstance().getPlaylist().observe(this, playlist -> playbackQueueAdapter.setData(playlist));
 
         AllPlaylistsAndSongsViewModel.getInstance().getData().observe(this, allPlaylists -> {
@@ -665,8 +664,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         tvPlayerSongChannel.setAlpha(mainAlpha);
         tvPlayerSecondarySongTitle.setAlpha(secondaryAlpha);
         tvPlayerSecondarySongChannel.setAlpha(secondaryAlpha);
-//        isRepeatSwitcher.setAlpha(secondaryAlpha);
-//        isShuffleSwitcher.setAlpha(secondaryAlpha);
+
     }
 
     public MainActivityContract.Presenter getPresenter() {

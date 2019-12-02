@@ -91,7 +91,7 @@ public class PlaylistEditingFragment extends Fragment {
         rvPlaylists.setAdapter(playlistAdapter);
         rvPlaylists.addItemDecoration(new DividerItemDecoration(context.get(), LinearLayoutManager.VERTICAL));
 
-        // Getting playlists with songs, put them into live data and then observe changes
+
         disposables.add(db.playlistDao().getAllRx().observeOn(Schedulers.newThread())
                 .subscribeOn(Schedulers.io()).subscribe(playlistDtos -> {
                     List<PlaylistWithSongs> playlistDataList = new ArrayList<>();
@@ -104,7 +104,7 @@ public class PlaylistEditingFragment extends Fragment {
                     AllPlaylistsAndSongsViewModel.getInstance().getData().postValue(playlistDataList);
                 }));
 
-        // Observe playlist live data and update UI
+
         AllPlaylistsAndSongsViewModel.getInstance().getData()
                 .observe(this, playlistDtos ->
                         disposables.add(Observable.just(playlistDtos)
@@ -126,13 +126,13 @@ public class PlaylistEditingFragment extends Fragment {
                     PlaylistSongDto newPlaylistSong = new PlaylistSongDto(playlistId, songForPlaylist.getVideoId());
 
                     AsyncTask.execute(() -> {
-                        // Check if song is already in DB
+
                         YoutubeSongDto songFromDb = db.youtubeSongDao().getByVideoId(songForPlaylist.getVideoId());
                         if (songFromDb == null) {
-                            // Saving song in the db
+
                             newPlaylistSong.setId(db.youtubeSongDao().insert(songForPlaylist));
                         }
-                        // Saving song with relation to the playlist
+
                         db.playlistSongsDao().insert(newPlaylistSong);
                     });
                     getActivity().onBackPressed();
@@ -167,7 +167,7 @@ public class PlaylistEditingFragment extends Fragment {
         super.onStart();
     }
 
-    // Copypasted https://mobikul.com/expandable-floating-action-button-fab-menu/
+
     private void showFABMenu() {
         isFabOpen = true;
         fabCreatePlaylist.animate().translationY(-getResources().getDimension(R.dimen.standard_70));

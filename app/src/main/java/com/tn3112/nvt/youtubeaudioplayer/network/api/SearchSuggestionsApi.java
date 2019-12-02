@@ -11,8 +11,12 @@ import retrofit2.http.Query;
 public interface SearchSuggestionsApi {
 
     @GET("complete/search")
-    Observable<SearchSuggestionsResponse> getSuggestionsRx(@Query("output") String output, @Query("ds") String ds, @Query("q") String query);
+    Observable<SearchSuggestionsResponse> getSuggestionsRx(@Query("output") String output,
+                                                           @Query("ds") String ds,
+                                                           @Query("q") String query);
 
     @GET("complete/search")
-    Call<ResponseBody> getSuggestions(@Query("output") String output, @Query("ds") String ds, @Query("q") String query);
+    Call<ResponseBody> getSuggestions(@Query("output") String output,
+                                      @Query("ds") String ds,
+                                      @Query("q") String query);
 }

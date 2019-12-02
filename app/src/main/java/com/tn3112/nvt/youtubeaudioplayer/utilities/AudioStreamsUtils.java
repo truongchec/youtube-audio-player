@@ -30,7 +30,7 @@ public class AudioStreamsUtils {
         try {
             youtubeVideoData = new YoutubeJExtractor().extract(videoId);
         }
-        // TODO: Do this in a good way
+
         catch (ExtractionException e) {
             throw new UserFriendlyException(R.string.generic_error_message,
                     e.getMessage());
@@ -70,7 +70,7 @@ public class AudioStreamsUtils {
     private StreamItem getBestStreamForInternetType(YoutubeVideoData youtubeVideoData) throws UserFriendlyException {
         List<AudioStreamItem> audioStreamsList = youtubeVideoData.getStreamingData().getAudioStreamItems();
         if (audioStreamsList.size() > 0) {
-            // Sorting streams by bitrate, from lowest to highest
+
             Collections.sort(audioStreamsList, (o1, o2) -> Integer.compare(o1.getBitrate(), o2.getBitrate()));
 
             SharedPreferences sharedPreferences = App.getInstance().getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE);

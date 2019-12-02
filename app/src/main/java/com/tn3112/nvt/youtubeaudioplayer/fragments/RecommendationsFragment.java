@@ -45,12 +45,12 @@ public class RecommendationsFragment extends Fragment {
         RecyclerView rvRecommendations = view.findViewById(R.id.rv_vertical_recommendations);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context.get());
         MainActivity activity = (MainActivity) context.get();
-        // Setting up the adapter
+
         verticalRecommendationsAdapter = new VerticalRecommendationsAdapter(activity, activity.getPresenter());
         rvRecommendations.setLayoutManager(linearLayoutManager);
         rvRecommendations.setAdapter(verticalRecommendationsAdapter);
         registerForContextMenu(rvRecommendations);
-        // Observing recommendations
+
         recommendationsViewModel.observe(this, verticalRecommendationsAdapter::replaceData);
     }
 

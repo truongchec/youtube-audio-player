@@ -326,7 +326,7 @@ public class ExoPlayerService extends Service {
                 case Player.STATE_ENDED:
                     //Stop playback and return to the start position
                     clearPlayerState();
-                    //Todo: Think how to avoid sending this and stick to handler
+
                     Bundle playbackEndedBundle = new Bundle();
                     playbackEndedBundle.putInt(Constants.EXTRA_PLAYER_STATE_CODE, Constants.PLAYBACK_PROGRESS_CHANGED);
                     playbackEndedBundle.putInt(Constants.EXTRA_TRACK_PROGRESS, 0);
