@@ -13,7 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Youtube music play</string>
     <string name="error">Error</string>
     <string name="empty_search_query_error_message">Please, type your search query and try again</string>
@@ -66,12 +66,13 @@
     <string name="pref_title_save_in_cache_only_wifi">Allow songs caching only when connected to WiFi</string>
     <string name="pref_description_save_in_cache_only_wifi">Will consume more mobile traffic if turned off</string>
     <string name="key_pref_save_in_cache_only_wifi">pref_mobile_network_caching</string>
-    
+
     <string name="pref_title_audio_quality">Audio quality</string>
     <string name="pref_description_audio_quality">Better quality consumes more traffic.
         Automatic is recommended (it will select quality based on your connection type)</string>
     <string name="pref_default_audio_quality">0</string>
     <string name="key_pref_audio_quality">pref_audio_quality</string>
+    <string name="login_with_google" tools:ignore="MissingTranslation">Login with Google</string>
     <string-array name="pref_list_titles_audio_quality">
         <item>Automatic</item>
         <item>Best</item>
