@@ -29,7 +29,9 @@
         <!--<item name="alertDialogTheme">@style/AlertDialogTheme</item>-->
     </style>
 
-
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
+    </style>
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>

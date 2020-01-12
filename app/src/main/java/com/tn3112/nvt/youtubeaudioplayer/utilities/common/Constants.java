@@ -6,7 +6,7 @@ public class Constants {
 
     //truy cập link dưới để lấy api key
     //https://console.developers.google.com/apis/library/youtube.googleapis.com
-    public final static String YOUTUBE_API_KEY = "AIzaSyAP4Mf-O4uKy321p89f7vsrTxH7fwmSLtY";
+    public final static String YOUTUBE_API_KEY = "AIzaSyDPJyOCcWD-_woMk4Npp2QeN5Z1sFzB51waqz";
 
     public static final String APP_NAME = "Youtube audio player";
     public static final String ENCODING_UTF_8 = "UTF-8";

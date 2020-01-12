@@ -21,13 +21,10 @@
         android:versionName="ver"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activities.login.StartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".activities.login.ResetPasswordActivity" />
+        <activity android:name=".activities.login.ResetPasswordActivity"
+            android:parentActivityName=".activities.login.LoginActivity"/>
         <activity android:name=".activities.login.LoginActivity" />
         <activity android:name=".activities.login.RegisterActivity" />
         <activity
@@ -37,6 +34,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
